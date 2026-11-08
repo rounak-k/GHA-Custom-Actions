@@ -26,7 +26,7 @@ runs:
       if: steps.cache.outputs.cache-hit != 'true' || inputs.caching != 'true'
       run: |
         npm ci
-        echo "cache='${{inputs.caching}}'" >> $GITHUB_outputs
+        echo "cache='${{inputs.caching}}'" >> $GITHUB_OUTPUTS
       shell: bash
     - name: Lint code
       run: npm run lint
