@@ -10,9 +10,13 @@ jobs:
       - name: Get code
         uses: actions/checkout@v7
       - name: Get cached dependencies
+        id: get-cached-deps
         uses: ./.github/actions/cached-deps
         with:
           caching: 'false'
+      - name: Output information
+        run: 'echo "Cache hit: ${{ steps.get-cached-deps.outputs.cache-hit }}"'
+
   test:
     runs-on: ubuntu-latest
     steps:
