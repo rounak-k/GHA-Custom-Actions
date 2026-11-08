@@ -13,7 +13,7 @@ jobs:
         id: get-cached-deps
         uses: ./.github/actions/cached-deps
         with:
-          caching: 'false'
+          caching: 'true'
       - name: Output information
         run: 'echo "Cache hit: ${{ steps.get-cached-deps.outputs.cache-hit }}"'
 
